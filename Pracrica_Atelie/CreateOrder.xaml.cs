@@ -32,15 +32,22 @@ namespace Pracrica_Atelie
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Order newOrder = new Order();
-            newOrder.TimeOfOrder = DateTime.Parse(timeBegin.Text.ToString());
-            newOrder.EndTime = DateTime.Parse(TimeEnd.Text.ToString());
-            newOrder.IdEmployee = _currentEmployee;
-            newOrder.IdClient = int.Parse(Client.Text);
-            newOrder.IdTitleWork = Disain.IsChecked == true ? 4 : 1;
-            newOrder.IdMaterials = int.Parse(Matetials.Text);
-            _mainWindow.Create(newOrder);
-            this.Close();
+            try
+            {
+                Order newOrder = new Order();
+                newOrder.TimeOfOrder = DateTime.Parse(timeBegin.Text.ToString());
+                newOrder.EndTime = DateTime.Parse(TimeEnd.Text.ToString());
+                newOrder.IdEmployee = _currentEmployee;
+                newOrder.IdClient = int.Parse(Client.Text);
+                newOrder.IdTitleWork = Disain.IsChecked == true ? 4 : 1;
+                newOrder.IdMaterials = int.Parse(Matetials.Text);
+                _mainWindow.Create(newOrder);
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Вы ввели не корректные данные");
+            }
         }
     }
 }
