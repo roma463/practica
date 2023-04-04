@@ -1,0 +1,32 @@
+﻿<Window x:Class="Pracrica_Atelie.Grid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pracrica_Atelie"
+        mc:Ignorable="d"
+        Title="Grid" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dtg_orders" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Margin="0,0,0,234">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="IdOrder" 
+                                 Binding="{Binding Path=IdOrder}"></DataGridTextColumn>
+                <DataGridTextColumn Header="TimeOfOrder" 
+                                 Binding="{Binding Path=TimeOfOrder}"></DataGridTextColumn>
+                <DataGridTextColumn Header="EndTime" 
+                                 Binding="{Binding Path=EndTime}"></DataGridTextColumn>
+                <DataGridTextColumn Header="IdEmployee" 
+                                 Binding="{Binding Path=IdEmployee}"></DataGridTextColumn>
+                <DataGridTextColumn Header="IdClient" 
+                                 Binding="{Binding Path=IdClient}"></DataGridTextColumn>
+                <DataGridTextColumn Header="IdTitleWork"
+                                 Binding="{Binding Path=IdTitleWork}"></DataGridTextColumn>
+                <DataGridTextColumn Header="IdMaterials" 
+                                 Binding="{Binding Path=IdMaterials}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btn_add" Content="Добавить" HorizontalAlignment="Left" Margin="136,217,0,0" VerticalAlignment="Top" Height="55" Width="111" Click="btn_add_Click"/>
+        <Button x:Name="btn_delete" Content="Удалить" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="55" Width="112" Click="btn_delete_Click"/>
+        <Button x:Name="btn_red" Content="Изменить" HorizontalAlignment="Left" Margin="556,217,0,0" VerticalAlignment="Top" Width="111" Height="55" Click="btn_red_Click"/>
+    </Grid>
+</Window>
